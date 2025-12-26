@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暴风王国全面研究报告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #FFFFFF;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        .card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        .highlight-gradient-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.05));
+        }
+        .highlight-gradient-red {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.05));
+        }
+        .highlight-gradient-yellow {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0), rgba(245, 158, 11, 0.05));
+        }
+        .highlight-gradient-green {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0), rgba(34, 197, 94, 0.05));
+        }
+        .highlight-gradient-purple {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0), rgba(168, 85, 247, 0.05));
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #3B82F6;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #3B82F6;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -26px;
+            top: 20px;
+            bottom: -20px;
+            width: 2px;
+            background-color: #E5E7EB;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+        <!-- 标题卡片 -->
+        <div class="card mb-6 md:col-span-4 p-8 md:p-12 flex flex-col justify-center items-center text-center relative">
+            <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+            <div class="relative z-10">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-crown text-4xl md:text-5xl text-yellow-500 mr-4"></i>
+                    <h1 class="text-3xl md:text-5xl font-bold text-gray-800">暴风王国全面研究报告</h1>
+                </div>
+                <p class="text-xl md:text-2xl text-gray-600 mt-4">艾泽拉斯人类文明的永恒堡垒</p>
+                <div class="mt-8 flex items-center justify-center space-x-8 text-gray-500">
+                    <div class="flex items-center">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>黑暗之门开启前1200年 - 至今</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>艾尔文森林</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-users mr-2"></i>
+                        <span>乌瑞恩王朝</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主要内容网格 -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+            <!-- 引言卡片 -->
+            <div class="card md:col-span-2 md:row-span-2 p-8 flex flex-col justify-between relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-scroll text-2xl text-green-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">引言</h2>
+                    </div>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        暴风王国作为《魔兽世界》中人类文明的核心象征，承载着艾泽拉斯世界最为悠久和辉煌的历史传承。这座建立于第一次战争前1200年的人类王国，不仅见证了艾泽拉斯大陆从古代帝国分裂到现代联盟形成的全过程，更在无数次战争与灾难中展现出强大的生命力与文明韧性。
+                    </p>
+                    <div class="mt-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                        <p class="text-sm md:text-base text-green-800 font-medium">
+                            <i class="fas fa-lightbulb mr-2"></i>研究核心：通过时间线梳理与专题分析相结合的方式，全面剖析暴风王国从建国至今的完整历史脉络。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 王国基本信息卡片 -->
+            <div class="card md:col-span-2 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">王国基本信息</h2>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-600 mb-2">1200+</div>
+                            <div class="text-sm text-gray-600">年历史</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-600 mb-2">5</div>
+                            <div class="text-sm text-gray-600">位君主</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-600 mb-2">6</div>
+                            <div class="text-sm text-gray-600">个城区</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-blue-600 mb-2">1</div>
+                            <div class="text-sm text-gray-600">个王朝</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 历史时间线卡片 -->
+            <div class="card md:col-span-4 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-yellow"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-history text-2xl text-yellow-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">历史演变时间线</h2>
+                    </div>
+                    <div class="relative pl-12 md:pl-16">
+                        <div class="timeline-item relative mb-8">
+                            <div class="timeline-line"></div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">建国初期与早期繁荣</h3>
+                            <p class="text-sm text-gray-500 mb-2">黑暗之门开启前1200年-黑暗之门0年</p>
+                            <p class="text-gray-700">阿拉索帝国分裂后，王室嫡系南下建立暴风王国，在兰顿·乌瑞恩领导下开始乌瑞恩王朝统治。</p>
+                        </div>
+                        <div class="timeline-item relative mb-8">
+                            <div class="timeline-line"></div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">第一次战争浩劫</h3>
+                            <p class="text-sm text-gray-500 mb-2">黑暗之门0年-黑暗之门3年</p>
+                            <p class="text-gray-700">兽人部落入侵，莱恩国王遇刺，安度因·洛萨带领幸存者北上寻求援助。</p>
+                        </div>
+                        <div class="timeline-item relative mb-8">
+                            <div class="timeline-line"></div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">第二次战争与重建</h3>
+                            <p class="text-sm text-gray-500 mb-2">黑暗之门20年-黑暗之门28年</p>
+                            <p class="text-gray-700">联盟胜利收复失地，新暴风城重建，瓦里安·乌瑞恩登基。</p>
+                        </div>
+                        <div class="timeline-item relative mb-8">
+                            <div class="timeline-line"></div>
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">石匠暴动与动荡</h3>
+                            <p class="text-sm text-gray-500 mb-2">黑暗之门28年-黑暗之门35年</p>
+                            <p class="text-gray-700">石匠暴动导致皇后蒂芬遇害，迪菲亚兄弟会成立，王国面临严重内部危机。</p>
+                        </div>
+                        <div class="timeline-item relative">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">安度因时代</h3>
+                            <p class="text-sm text-gray-500 mb-2">黑暗之门38年至今</p>
+                            <p class="text-gray-700">瓦里安牺牲后安度因继位，经历暗影国度事件后隐退，吉恩·格雷迈恩暂代国事。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 政治体系卡片 -->
+            <div class="card md:col-span-2 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-red"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-chess-king text-2xl text-red-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">政治体系演变</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <h3 class="font-semibold text-gray-800 mb-2">君主制度</h3>
+                            <p class="text-sm text-gray-600">乌瑞恩王朝世袭君主制，王位由国王和王后所生长子继承。</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <h3 class="font-semibold text-gray-800 mb-2">中央政府</h3>
+                            <p class="text-sm text-gray-600">以贵族院为核心，包括各类大臣、顾问和宫廷法师等高级官员。</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <h3 class="font-semibold text-gray-800 mb-2">联盟关系</h3>
+                            <p class="text-sm text-gray-600">从洛丹伦联盟创始成员发展为联盟核心力量和政治中心。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 军事力量卡片 -->
+            <div class="card md:col-span-2 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-purple-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">军事力量体系</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <i class="fas fa-fist-raised text-3xl text-purple-600 mb-2"></i>
+                            <h3 class="font-semibold text-gray-800 mb-1">暴风城卫队</h3>
+                            <p class="text-xs text-gray-500">首都安全保卫</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <i class="fas fa-crown text-3xl text-purple-600 mb-2"></i>
+                            <h3 class="font-semibold text-gray-800 mb-1">皇家卫队</h3>
+                            <p class="text-xs text-gray-500">王室成员保护</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <i class="fas fa-ship text-3xl text-purple-600 mb-2"></i>
+                            <h3 class="font-semibold text-gray-800 mb-1">暴风舰队</h3>
+                            <p class="text-xs text-gray-500">海上军事力量</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <i class="fas fa-dove text-3xl text-purple-600 mb-2"></i>
+                            <h3 class="font-semibold text-gray-800 mb-1">狮鹫骑士团</h3>
+                            <p class="text-xs text-gray-500">空中作战部队</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 经济结构卡片 -->
+            <div class="card md:col-span-2 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-coins text-2xl text-green-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">经济结构与贸易</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-wheat text-green-600 mr-3"></i>
+                                <span class="font-medium text-gray-800">农业基础</span>
+                            </div>
+                            <span class="text-sm text-gray-500">小麦、苹果、蔬菜</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-hammer text-green-600 mr-3"></i>
+                                <span class="font-medium text-gray-800">矿业资源</span>
+                            </div>
+                            <span class="text-sm text-gray-500">铁、铜、金</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-tree text-green-600 mr-3"></i>
+                                <span class="font-medium text-gray-800">林业资源</span>
+                            </div>
+                            <span class="text-sm text-gray-500">橡木等优质木材</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-store text-green-600 mr-3"></i>
+                                <span class="font-medium text-gray-800">贸易中心</span>
+                            </div>
+                            <span class="text-sm text-gray-500">暴风城贸易区</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 经济数据图表卡片 -->
+            <div class="card md:col-span-2 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative z-10 flex flex-col h-full">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">经济产业占比</h2>
+                    <div class="flex-grow h-64">
+                        <canvas id="economyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 文化传统卡片 -->
+            <div class="card md:col-span-2 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-yellow"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-palette text-2xl text-yellow-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">文化传统与信仰</h2>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <h3 class="font-semibold text-gray-800 mb-2">建筑艺术</h3>
+                            <p class="text-sm text-gray-600">砂岩建筑与大理石装饰，独特的"人类风格"，六个功能区域划分。</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <h3 class="font-semibold text-gray-800 mb-2">宗教信仰</h3>
+                            <p class="text-sm text-gray-600">以圣光信仰为主流，圣光大教堂为中心，多元宗教和谐共存。</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <h3 class="font-semibold text-gray-800 mb-2">文化符号</h3>
+                            <p class="text-sm text-gray-600">雄狮象征勇气力量，蓝色代表忠诚智慧，狮鹫体现双重统治力。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 城市区域卡片 -->
+            <div class="card md:col-span-2 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-city text-2xl text-blue-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">暴风城六大区域</h2>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-store text-blue-600 mr-2"></i>
+                                <span class="font-medium text-gray-800">贸易区</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">繁盛的交易市场</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-magic text-blue-600 mr-2"></i>
+                                <span class="font-medium text-gray-800">秘法区</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">神秘研究之所</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-home text-blue-600 mr-2"></i>
+                                <span class="font-medium text-gray-800">旧城区</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">主要的居住地</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-hammer text-blue-600 mr-2"></i>
+                                <span class="font-medium text-gray-800">矮人区</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">工业科技发展</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-church text-blue-600 mr-2"></i>
+                                <span class="font-medium text-gray-800">教堂广场</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">圣光大教堂</p>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-crown text-blue-600 mr-2"></i>
+                                <span class="font-medium text-gray-800">暴风要塞</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">王室所在地</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 著名人物卡片 -->
+            <div class="card md:col-span-4 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-red"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-users text-2xl text-red-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">乌瑞恩王朝历代君主</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-crown text-2xl text-red-600"></i>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">兰顿·乌瑞恩</h3>
+                            <p class="text-xs text-gray-500">开国君主</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-crown text-2xl text-red-600"></i>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">巴拉森·乌瑞恩</h3>
+                            <p class="text-xs text-gray-500">"坚定者"</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-crown text-2xl text-red-600"></i>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">莱恩·乌瑞恩一世</h3>
+                            <p class="text-xs text-gray-500">遇刺殉国</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-crown text-2xl text-red-600"></i>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">瓦里安·乌瑞恩</h3>
+                            <p class="text-xs text-gray-500">"联盟至高王"</p>
+                        </div>
+                        <div class="text-center p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-crown text-2xl text-red-600"></i>
+                            </div>
+                            <h3 class="font-semibold text-gray-800 mb-1">安度因·乌瑞恩</h3>
+                            <p class="text-xs text-gray-500">现任国王</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 军事冲突图表卡片 -->
+            <div class="card md:col-span-2 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative z-10 flex flex-col h-full">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">主要军事冲突</h2>
+                    <div class="flex-grow h-64">
+                        <canvas id="conflictChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 结语卡片 -->
+            <div class="card md:col-span-2 p-8 relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-flag-checkered text-2xl text-blue-600 mr-3"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">结语</h2>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        暴风王国的历史告诉我们，一个伟大的国家不仅需要强大的物质基础，更需要深厚的文化底蕴、坚定的精神信仰和团结的民族意志。这座"艾泽拉斯人类文明的永恒堡垒"必将在新的历史时期继续发挥重要作用，为联盟的团结和艾泽拉斯世界的和平做出新的贡献。
+                    </p>
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-sm text-blue-800 font-medium">
+                            <i class="fas fa-quote-left mr-2"></i>从1200年前阿拉索血脉南下建立王国，到如今成为联盟的政治、经济、文化中心，暴风王国的历史演变轨迹深刻反映了艾泽拉斯世界的发展规律。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 经济产业占比图表
+    const economyCtx = document.getElementById('economyChart').getContext('2d');
+    const economyChart = new Chart(economyCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['农业', '贸易', '矿业', '手工业', '其他'],
+            datasets: [{
+                data: [35, 25, 20, 15, 5],
+                backgroundColor: [
+                    '#10B981', // green-500
+                    '#3B82F6', // blue-500
+                    '#F59E0B', // amber-500
+                    '#8B5CF6', // violet-500
+                    '#6B7280'  // gray-500
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        boxWidth: 12,
+                        padding: 15,
+                        font: {
+                            size: 11
+                        }
+                    }
+                }
+            },
+            cutout: '70%'
+        }
+    });
+
+    // 主要军事冲突图表
+    const conflictCtx = document.getElementById('conflictChart').getContext('2d');
+    const conflictChart = new Chart(conflictCtx, {
+        type: 'bar',
+        data: {
+            labels: ['第一次战争', '第二次战争', '第三次战争', '大灾变', '燃烧军团入侵'],
+            datasets: [{
+                label: '影响程度',
+                data: [85, 95, 90, 75, 88],
+                backgroundColor: [
+                    'rgba(239, 68, 68, 0.7)',
+                    'rgba(239, 68, 68, 0.7)',
+                    'rgba(239, 68, 68, 0.7)',
+                    'rgba(239, 68, 68, 0.7)',
+                    'rgba(239, 68, 68, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(239, 68, 68, 1)',
+                    'rgba(239, 68, 68, 1)',
+                    'rgba(239, 68, 68, 1)',
+                    'rgba(239, 68, 68, 1)',
+                    'rgba(239, 68, 68, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                },
+                x: {
+                    ticks: {
+                        maxRotation: 45
+                    }
+                }
+            }
+        }
+    });
+</script>
+</html>
