@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -11,7 +10,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #FFFFFF;
+            background-color: #f9fafb;
         }
         .card {
             background-color: white;
@@ -22,39 +21,49 @@
             overflow: hidden;
             position: relative;
         }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
         .highlight-gradient-blue {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.05));
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.08));
         }
         .highlight-gradient-purple {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.05));
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.08));
         }
         .highlight-gradient-green {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0), rgba(34, 197, 94, 0.05));
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0), rgba(34, 197, 94, 0.08));
         }
         .highlight-gradient-red {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.05));
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.08));
         }
         .highlight-gradient-orange {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0), rgba(249, 115, 22, 0.05));
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0), rgba(249, 115, 22, 0.08));
         }
         .highlight-gradient-teal {
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0), rgba(20, 184, 166, 0.05));
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0), rgba(20, 184, 166, 0.08));
         }
         .highlight-gradient-yellow {
-            background: linear-gradient(135deg, rgba(234, 179, 8, 0), rgba(234, 179, 8, 0.05));
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0), rgba(234, 179, 8, 0.08));
+        }
+        .kingdom-card {
+            transition: all 0.3s ease;
+        }
+        .kingdom-card:hover {
+            transform: translateX(5px);
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-gray-50">
     <div class="max-w-7xl mx-auto p-4 md:p-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
             <!-- 主标题卡片 -->
             <div class="card md:col-span-4 p-8 flex flex-col justify-center items-center text-center">
                 <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
                 <div class="relative z-10">
-                    <div class="text-6xl md:text-8xl font-bold text-gray-800 mb-4">魔兽世界</div>
+                    <div class="text-6xl md:text-8xl font-bold text-gray-800 mb-4 tracking-tight">魔兽世界</div>
                     <div class="text-2xl md:text-4xl font-semibold text-gray-600 mb-6">世界观全面研究</div>
-                    <div class="text-lg text-gray-500">A Comprehensive Study of Azeroth's Universe</div>
+                    <div class="text-lg text-gray-500 italic">A Comprehensive Study of Azeroth's Universe</div>
                 </div>
             </div>
 
@@ -66,12 +75,12 @@
                         <i class="fas fa-globe-americas text-3xl text-purple-500 mr-3"></i>
                         <div class="text-2xl font-bold text-gray-800">世界起源与泰坦创世</div>
                     </div>
-                    <p class="text-gray-600 mb-4">艾泽拉斯世界的起源可追溯到宇宙形成之初，光与虚空的永恒对抗中诞生了泰坦。泰坦们来到艾泽拉斯，击败上古之神并将其封印，创造了永恒之井和守护巨龙。</p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">艾泽拉斯世界的起源可追溯到宇宙形成之初，光与虚空的永恒对抗中诞生了泰坦。泰坦们来到艾泽拉斯，击败上古之神并将其封印，创造了永恒之井和守护巨龙。</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">泰坦</span>
-                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">上古之神</span>
-                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">永恒之井</span>
-                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">守护巨龙</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm hover:bg-purple-200 transition-colors">泰坦</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm hover:bg-purple-200 transition-colors">上古之神</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm hover:bg-purple-200 transition-colors">永恒之井</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm hover:bg-purple-200 transition-colors">守护巨龙</span>
                     </div>
                 </div>
             </div>
@@ -84,21 +93,21 @@
                         <i class="fas fa-map-marked-alt text-3xl text-green-500 mr-3"></i>
                         <div class="text-2xl font-bold text-gray-800">艾泽拉斯地理结构</div>
                     </div>
-                    <p class="text-gray-600 mb-4">艾泽拉斯经历了"大分裂"，从一个大陆分裂为多个大陆和岛屿，包括东部王国、卡利姆多、诺森德、潘达利亚等主要大陆。</p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">艾泽拉斯经历了"大分裂"，从一个大陆分裂为多个大陆和岛屿，包括东部王国、卡利姆多、诺森德、潘达利亚等主要大陆。</p>
                     <div class="grid grid-cols-2 gap-2 text-sm">
-                        <div class="bg-green-50 p-2 rounded-lg">
+                        <div class="bg-green-50 p-2 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-green-800">东部王国</div>
                             <div class="text-green-600">洛丹伦、卡兹莫丹</div>
                         </div>
-                        <div class="bg-green-50 p-2 rounded-lg">
+                        <div class="bg-green-50 p-2 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-green-800">卡利姆多</div>
                             <div class="text-green-600">暗夜精灵、兽人、牛头人</div>
                         </div>
-                        <div class="bg-green-50 p-2 rounded-lg">
+                        <div class="bg-green-50 p-2 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-green-800">诺森德</div>
                             <div class="text-green-600">冰雪覆盖、泰坦遗迹</div>
                         </div>
-                        <div class="bg-green-50 p-2 rounded-lg">
+                        <div class="bg-green-50 p-2 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-green-800">潘达利亚</div>
                             <div class="text-green-600">迷雾隐藏、熊猫人</div>
                         </div>
@@ -129,12 +138,12 @@
                         <div class="text-xl font-bold text-gray-800">联盟种族</div>
                     </div>
                     <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center"><i class="fas fa-user text-blue-400 w-5"></i>人类</li>
-                        <li class="flex items-center"><i class="fas fa-leaf text-blue-400 w-5"></i>暗夜精灵</li>
-                        <li class="flex items-center"><i class="fas fa-hammer text-blue-400 w-5"></i>矮人</li>
-                        <li class="flex items-center"><i class="fas fa-bolt text-blue-400 w-5"></i>侏儒</li>
-                        <li class="flex items-center"><i class="fas fa-star text-blue-400 w-5"></i>德莱尼</li>
-                        <li class="flex items-center"><i class="fas fa-moon text-blue-400 w-5"></i>狼人</li>
+                        <li class="flex items-center hover:text-blue-600 transition-colors"><i class="fas fa-user text-blue-400 w-5"></i>人类</li>
+                        <li class="flex items-center hover:text-blue-600 transition-colors"><i class="fas fa-leaf text-blue-400 w-5"></i>暗夜精灵</li>
+                        <li class="flex items-center hover:text-blue-600 transition-colors"><i class="fas fa-hammer text-blue-400 w-5"></i>矮人</li>
+                        <li class="flex items-center hover:text-blue-600 transition-colors"><i class="fas fa-bolt text-blue-400 w-5"></i>侏儒</li>
+                        <li class="flex items-center hover:text-blue-600 transition-colors"><i class="fas fa-star text-blue-400 w-5"></i>德莱尼</li>
+                        <li class="flex items-center hover:text-blue-600 transition-colors"><i class="fas fa-moon text-blue-400 w-5"></i>狼人</li>
                     </ul>
                 </div>
             </div>
@@ -148,12 +157,12 @@
                         <div class="text-xl font-bold text-gray-800">部落种族</div>
                     </div>
                     <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center"><i class="fas fa-fist-raised text-red-400 w-5"></i>兽人</li>
-                        <li class="flex items-center"><i class="fas fa-bull text-red-400 w-5"></i>牛头人</li>
-                        <li class="flex items-center"><i class="fas fa-skull text-red-400 w-5"></i>亡灵</li>
-                        <li class="flex items-center"><i class="fas fa-mask text-red-400 w-5"></i>巨魔</li>
-                        <li class="flex items-center"><i class="fas fa-magic text-red-400 w-5"></i>血精灵</li>
-                        <li class="flex items-center"><i class="fas fa-bomb text-red-400 w-5"></i>地精</li>
+                        <li class="flex items-center hover:text-red-600 transition-colors"><i class="fas fa-fist-raised text-red-400 w-5"></i>兽人</li>
+                        <li class="flex items-center hover:text-red-600 transition-colors"><i class="fas fa-bull text-red-400 w-5"></i>牛头人</li>
+                        <li class="flex items-center hover:text-red-600 transition-colors"><i class="fas fa-skull text-red-400 w-5"></i>亡灵</li>
+                        <li class="flex items-center hover:text-red-600 transition-colors"><i class="fas fa-mask text-red-400 w-5"></i>巨魔</li>
+                        <li class="flex items-center hover:text-red-600 transition-colors"><i class="fas fa-magic text-red-400 w-5"></i>血精灵</li>
+                        <li class="flex items-center hover:text-red-600 transition-colors"><i class="fas fa-bomb text-red-400 w-5"></i>地精</li>
                     </ul>
                 </div>
             </div>
@@ -167,15 +176,15 @@
                         <div class="text-2xl font-bold text-gray-800">联盟与部落的恩怨情仇</div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="bg-yellow-50 p-4 rounded-lg">
+                        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-yellow-800 mb-2">历史冲突</div>
                             <p class="text-sm text-yellow-700">第一次战争、第二次战争、第三次战争、加尔鲁什时期的冲突、破碎海滩战役、第四次大战</p>
                         </div>
-                        <div class="bg-yellow-50 p-4 rounded-lg">
+                        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-yellow-800 mb-2">短暂合作</div>
                             <p class="text-sm text-yellow-700">海加尔山战役、对抗巫妖王、对抗燃烧军团、对抗上古之神</p>
                         </div>
-                        <div class="bg-yellow-50 p-4 rounded-lg">
+                        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-yellow-800 mb-2">根本分歧</div>
                             <p class="text-sm text-yellow-700">资源争夺、领土争端、意识形态对立、历史仇恨</p>
                         </div>
@@ -191,12 +200,12 @@
                         <i class="fas fa-sun text-3xl text-teal-500 mr-3"></i>
                         <div class="text-2xl font-bold text-gray-800">圣光信仰</div>
                     </div>
-                    <p class="text-gray-600 mb-4">圣光信仰强调正义、怜悯和保护，被人类、矮人、德莱尼等多个种族所崇拜。其信徒包括圣骑士、牧师和萨满等职业。</p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">圣光信仰强调正义、怜悯和保护，被人类、矮人、德莱尼等多个种族所崇拜。其信徒包括圣骑士、牧师和萨满等职业。</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">纳鲁</span>
-                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">白银之手骑士团</span>
-                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">血骑士团</span>
-                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">神圣魔法</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm hover:bg-teal-200 transition-colors">纳鲁</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm hover:bg-teal-200 transition-colors">白银之手骑士团</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm hover:bg-teal-200 transition-colors">血骑士团</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm hover:bg-teal-200 transition-colors">神圣魔法</span>
                     </div>
                 </div>
             </div>
@@ -209,12 +218,12 @@
                         <i class="fas fa-seedling text-3xl text-green-500 mr-3"></i>
                         <div class="text-2xl font-bold text-gray-800">德鲁伊教与自然崇拜</div>
                     </div>
-                    <p class="text-gray-600 mb-4">德鲁伊教是一种古老的自然崇拜信仰，相信万物有灵，追求与自然的和谐统一。德鲁伊可以通过冥想进入翡翠梦境。</p>
+                    <p class="text-gray-600 mb-4 leading-relaxed">德鲁伊教是一种古老的自然崇拜信仰，相信万物有灵，追求与自然的和谐统一。德鲁伊可以通过冥想进入翡翠梦境。</p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">塞纳留斯</span>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">艾露恩</span>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">翡翠梦境</span>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">自然魔法</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm hover:bg-green-200 transition-colors">塞纳留斯</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm hover:bg-green-200 transition-colors">艾露恩</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm hover:bg-green-200 transition-colors">翡翠梦境</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm hover:bg-green-200 transition-colors">自然魔法</span>
                     </div>
                 </div>
             </div>
@@ -228,23 +237,23 @@
                         <div class="text-2xl font-bold text-gray-800">魔法体系与奥术传统</div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                        <div class="bg-purple-50 p-4 rounded-lg">
+                        <div class="bg-purple-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-purple-800 mb-2">奥术魔法</div>
                             <p class="text-sm text-purple-700">最常见的魔法形式，来源于对宇宙基本能量的直接操纵</p>
                         </div>
-                        <div class="bg-purple-50 p-4 rounded-lg">
+                        <div class="bg-purple-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-purple-800 mb-2">神圣魔法</div>
                             <p class="text-sm text-purple-700">来源于对圣光的信仰和祈祷，擅长治疗和净化</p>
                         </div>
-                        <div class="bg-purple-50 p-4 rounded-lg">
+                        <div class="bg-purple-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-purple-800 mb-2">自然魔法</div>
                             <p class="text-sm text-purple-700">来源于与自然界的沟通，德鲁伊和萨满的主要力量</p>
                         </div>
-                        <div class="bg-purple-50 p-4 rounded-lg">
+                        <div class="bg-purple-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-purple-800 mb-2">元素魔法</div>
                             <p class="text-sm text-purple-700">操控火、水、土、风四大元素的力量</p>
                         </div>
-                        <div class="bg-purple-50 p-4 rounded-lg">
+                        <div class="bg-purple-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                             <div class="font-semibold text-purple-800 mb-2">暗影魔法</div>
                             <p class="text-sm text-purple-700">来源于负面情绪和虚空能量，具有强大的破坏力</p>
                         </div>
@@ -253,68 +262,102 @@
             </div>
         </div>
     </div>
+    
     <!-- 主要王国栏目 -->
-<div class="mt-12 mb-8">
-  <h2 class="text-xl font-bold text-gray-800 mb-6">主要王国</h2>
+    <div class="mt-12 mb-16 max-w-7xl mx-auto px-4 md:px-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+            <i class="fas fa-crown text-amber-500 mr-2"></i>主要王国
+        </h2>
 
-  <!-- 达拉然城邦卡片 -->
-  <a href="达拉然城邦.html" class="block no-underline">
-    <div class="card p-5 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
-      <div class="flex items-center gap-4">
-        <!-- 图标 -->
-        <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
-          <i class="fa-solid fa-city text-indigo-600 text-sm"></i>
+        <div class="space-y-4">
+            <!-- 暴风王国卡片 -->
+            <a href="暴风王国.html" class="block no-underline">
+                <div class="kingdom-card card p-5 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+                    <div class="flex items-center gap-4">
+                        <!-- 图标 -->
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-fort-awesome text-blue-600"></i>
+                        </div>
+                        <!-- 内容 -->
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">暴风王国</h3>
+                            <p class="text-sm text-gray-500 mb-1">Kingdom of Stormwind</p>
+                            <p class="text-sm text-gray-600 leading-tight">
+                                联盟的中流砥柱，人类文明的核心，经历了多次战争考验依然屹立不倒。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 达拉然城邦卡片 -->
+            <a href="达拉然城邦.html" class="block no-underline">
+                <div class="kingdom-card card p-5 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+                    <div class="flex items-center gap-4">
+                        <!-- 图标 -->
+                        <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-city text-indigo-600"></i>
+                        </div>
+                        <!-- 内容 -->
+                        <div>
+                            <h3 class="font-bold text-gray-800 text-lg mb-1">达拉然城邦</h3>
+                            <p class="text-sm text-gray-500 mb-1">The Kirin Tor</p>
+                            <p class="text-sm text-gray-600 leading-tight">
+                                肯瑞托议会所在地，艾泽拉斯最强大的奥术魔法研究中心与守护者。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
-        <!-- 内容 -->
-        <div>
-          <h3 class="font-bold text-gray-800 text-base mb-1">达拉然城邦</h3>
-          <p class="text-sm text-gray-500 mb-1">The Kirin Tor</p>
-          <p class="text-xs text-gray-600 leading-tight">
-            肯瑞托议会所在地，艾泽拉斯最强大的奥术魔法研究中心与守护者。
-          </p>
-        </div>
-      </div>
     </div>
-  </a>
-</div>
-</body>
-<script>
-    // 种族人口分布图表
-    const raceCtx = document.getElementById('raceChart').getContext('2d');
-    new Chart(raceCtx, {
-        type: 'pie',
-        data: {
-            labels: ['人类', '血精灵', '巨魔', '牛头人', '兽人', '矮人', '德莱尼', '其他'],
-            datasets: [{
-                data: [28.4, 15.2, 10.8, 9.0, 7.8, 4.2, 5.9, 18.7],
-                backgroundColor: [
-                    '#3B82F6', // 蓝色
-                    '#EC4899', // 粉色
-                    '#10B981', // 绿色
-                    '#F59E0B', // 橙色
-                    '#EF4444', // 红色
-                    '#6B7280', // 灰色
-                    '#8B5CF6', // 紫色
-                    '#6B7280'  // 灰色
-                ],
-                borderColor: '#FFFFFF',
-                borderWidth: 2
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'right',
-                    labels: {
-                        font: {
-                            size: 12
+
+    <script>
+        // 种族人口分布图表
+        const raceCtx = document.getElementById('raceChart').getContext('2d');
+        new Chart(raceCtx, {
+            type: 'pie',
+            data: {
+                labels: ['人类', '血精灵', '巨魔', '牛头人', '兽人', '矮人', '德莱尼', '其他'],
+                datasets: [{
+                    data: [28.4, 15.2, 10.8, 9.0, 7.8, 4.2, 5.9, 18.7],
+                    backgroundColor: [
+                        '#3B82F6', // 蓝色
+                        '#EC4899', // 粉色
+                        '#10B981', // 绿色
+                        '#F59E0B', // 橙色
+                        '#EF4444', // 红色
+                        '#6B7280', // 灰色
+                        '#8B5CF6', // 紫色
+                        '#6B7280'  // 灰色
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right',
+                        labels: {
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
                         }
                     }
                 }
             }
-        }
-    });
-</script>
+        });
+    </script>
+</body>
 </html>
