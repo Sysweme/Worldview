@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>达拉然政治机构分析报告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #FFFFFF;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            position: relative;
+        }
+        .highlight-gradient-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.05));
+        }
+        .highlight-gradient-purple {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.05));
+        }
+        .highlight-gradient-green {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0), rgba(34, 197, 94, 0.05));
+        }
+        .highlight-gradient-amber {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0), rgba(245, 158, 11, 0.05));
+        }
+        .highlight-gradient-rose {
+            background: linear-gradient(135deg, rgba(244, 63, 94, 0), rgba(244, 63, 94, 0.05));
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+            <!-- 标题卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center items-center text-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative z-10">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">达拉然政治机构分析报告</h1>
+                    <p class="text-xl text-gray-500">A Political Analysis of Dalaran's Governance System</p>
+                    <div class="mt-6 flex items-center justify-center gap-2 text-gray-600">
+                        <i class="fa-solid fa-landmark-dome"></i>
+                        <span>艾泽拉斯世界的魔法王国政治体系研究</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 引言卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">引言</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        在艾泽拉斯世界的政治版图中，达拉然王国占据着独一无二的地位。作为东部王国人类七国之一，达拉然不仅是最古老的城邦之一，更是整个世界的魔法中心。与其他由君主统治的人类王国不同，达拉然采用了独特的<span class="font-bold text-purple-600">魔法议会制</span>，由被称为肯瑞托的法师精英组织掌控国家权力。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 历史演变卡片 -->
+            <div class="card md:col-span-2 md:row-span-2 p-8 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative z-10 flex flex-col h-full">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">历史演变</h2>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex items-start gap-3">
+                            <div class="bg-green-100 text-green-800 p-2 rounded-lg flex-shrink-0">
+                                <i class="fa-solid fa-scroll"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-700">阿拉索帝国时期</h3>
+                                <p class="text-sm text-gray-600">作为帝国最早建成的城邦之一，达拉然的建立源于一群追求魔法自由的法师。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="bg-green-100 text-green-800 p-2 rounded-lg flex-shrink-0">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-700">提瑞斯法议会时期</h3>
+                                <p class="text-sm text-gray-600">成立于人类与高等精灵法师之间的秘密组织，创造了守护者职位对抗恶魔威胁。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="bg-green-100 text-green-800 p-2 rounded-lg flex-shrink-0">
+                                <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-700">重建时期</h3>
+                                <p class="text-sm text-gray-600">第三次战争后，达拉然重建并确立中立地位，政治结构更加开放透明。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="bg-green-100 text-green-800 p-2 rounded-lg flex-shrink-0">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-700">巨龙时代与地心之战</h3>
+                                <p class="text-sm text-gray-600">2024年《地心之战》资料片中，达拉然遭遇前所未有的危机，城市被虚空势力摧毁。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 人口构成卡片 -->
+            <div class="card md:col-span-2 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-amber"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">人口构成</h2>
+                    <div class="h-64">
+                        <canvas id="populationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 主要机构卡片 -->
+            <div class="card md:col-span-2 p-8 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">主要政治机构</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-blue-600 mb-2"><i class="fa-solid fa-users-gear fa-2x"></i></div>
+                            <h3 class="font-bold text-gray-700">肯瑞托六人议会</h3>
+                            <p class="text-xs text-gray-600">最高权力中心</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-blue-600 mb-2"><i class="fa-solid fa-building-columns fa-2x"></i></div>
+                            <h3 class="font-bold text-gray-700">肯瑞托组织</h3>
+                            <p class="text-xs text-gray-600">魔法精英等级体系</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-blue-600 mb-2"><i class="fa-solid fa-city fa-2x"></i></div>
+                            <h3 class="font-bold text-gray-700">达拉然市政厅</h3>
+                            <p class="text-xs text-gray-600">世俗管理机构</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-blue-600 mb-2"><i class="fa-solid fa-shield-halved fa-2x"></i></div>
+                            <h3 class="font-bold text-gray-700">军事安全机构</h3>
+                            <p class="text-xs text-gray-600">守护者与监狱</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 六人议会卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">肯瑞托六人议会</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-purple-50">
+                                    <th class="border border-gray-200 px-4 py-2 text-left">成员</th>
+                                    <th class="border border-gray-200 px-4 py-2 text-left">身份</th>
+                                    <th class="border border-gray-200 px-4 py-2 text-left">时期</th>
+                                    <th class="border border-gray-200 px-4 py-2 text-left">状态</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-2">卡德加</td>
+                                    <td class="border border-gray-200 px-4 py-2">原守护者麦迪文学徒</td>
+                                    <td class="border border-gray-200 px-4 py-2">巨龙时代</td>
+                                    <td class="border border-gray-200 px-4 py-2"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">现任</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-2">吉安娜·普罗德摩尔</td>
+                                    <td class="border border-gray-200 px-4 py-2">前肯瑞托领袖</td>
+                                    <td class="border border-gray-200 px-4 py-2">熊猫人之谜</td>
+                                    <td class="border border-gray-200 px-4 py-2"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">已退出</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-2">卡雷苟斯</td>
+                                    <td class="border border-gray-200 px-4 py-2">蓝龙军团代表</td>
+                                    <td class="border border-gray-200 px-4 py-2">巨龙时代</td>
+                                    <td class="border border-gray-200 px-4 py-2"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">已退出</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-2">德伦登</td>
+                                    <td class="border border-gray-200 px-4 py-2">前议员</td>
+                                    <td class="border border-gray-200 px-4 py-2">地心之战</td>
+                                    <td class="border border-gray-200 px-4 py-2"><span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs">背叛者</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 特殊组织卡片 -->
+            <div class="card md:col-span-2 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-rose"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">特殊政治组织</h2>
+                    <div class="space-y-4">
+                        <div class="bg-rose-50 p-4 rounded-lg">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-star text-rose-600"></i>
+                                <h3 class="font-bold text-gray-700">银色盟约</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">由温蕾萨·风行者领导的高等精灵组织，代表联盟利益，反对部落势力在达拉然的存在。</p>
+                        </div>
+                        <div class="bg-rose-50 p-4 rounded-lg">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i class="fa-solid fa-sun text-rose-600"></i>
+                                <h3 class="font-bold text-gray-700">夺日者</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">以血精灵为主体的组织，由艾萨斯·夺日者领导，代表部落利益，在达拉然拥有专属区域。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 权力关系卡片 -->
+            <div class="card md:col-span-2 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-amber"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">权力关系与协作机制</h2>
+                    <div class="h-64">
+                        <canvas id="powerChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 政治文化卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">政治文化的独特性</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <div class="text-blue-600 mb-3"><i class="fa-solid fa-crown fa-2x"></i></div>
+                            <h3 class="font-bold text-gray-700 mb-2">魔法精英统治</h3>
+                            <p class="text-sm text-gray-600">以能力为基础的选拔机制，知识垄断与传承，权力与责任的统一。</p>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <div class="text-blue-600 mb-3"><i class="fa-solid fa-globe fa-2x"></i></div>
+                            <h3 class="font-bold text-gray-700 mb-2">多元种族共治</h3>
+                            <p class="text-sm text-gray-600">平等的法律地位，比例代表制，文化包容政策，共同利益纽带。</p>
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <div class="text-blue-600 mb-3"><i class="fa-solid fa-balance-scale fa-2x"></i></div>
+                            <h3 class="font-bold text-gray-700 mb-2">中立外交政策</h3>
+                            <p class="text-sm text-gray-600">军事中立，经济开放，文化包容，政治独立，在联盟与部落间保持平衡。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 重大事件卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">重大历史事件中的政治机构运作</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-lg">
+                            <div class="bg-purple-100 text-purple-800 p-3 rounded-lg flex-shrink-0">
+                                <i class="fa-solid fa-skull-crossbones"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-700">第三次战争：城市陷落</h3>
+                                <p class="text-sm text-gray-600">安东尼达斯领导下的防御决策，麦迪文之书被盗的关键转折点，过度依赖魔法防御的教训。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-lg">
+                            <div class="bg-purple-100 text-purple-800 p-3 rounded-lg flex-shrink-0">
+                                <i class="fa-solid fa-arrows-spin"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-700">重建时期：政治体系重塑</h3>
+                                <p class="text-sm text-gray-600">重建决策的形成，城市移动的历史性决策，中立政策的确立与实施。</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-lg">
+                            <div class="bg-purple-100 text-purple-800 p-3 rounded-lg flex-shrink-0">
+                                <i class="fa-solid fa-mask"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-700">地心之战：终极考验</h3>
+                                <p class="text-sm text-gray-600">德伦登（萨拉塔斯）的背叛，城市毁灭的政治后果，幸存者的集结与重建努力。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 结论卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">结论</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        达拉然的政治体系是一个不断演变的复杂系统，从古代的城邦联盟到现代的魔法议会制，从神秘的精英统治到相对开放的多元共治，始终在适应着时代的变化。魔法精英统治是其核心特征，多元种族共治是其重要特色，中立外交政策是其生存和发展的重要策略。
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mt-3">
+                        展望未来，随着《午夜》资料片的推出，达拉然的政治体系将迎来根本性的重构。我们有理由相信，在幸存者的共同努力下，一个更加民主、更加包容、更加智慧的新达拉然将会诞生。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 人口构成图表
+    const populationCtx = document.getElementById('populationChart').getContext('2d');
+    new Chart(populationCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['人类', '高等精灵', '血精灵', '其他种族'],
+            datasets: [{
+                data: [40, 32, 22, 6],
+                backgroundColor: [
+                    'rgba(59, 130, 246, 0.7)',
+                    'rgba(139, 92, 246, 0.7)',
+                    'rgba(244, 63, 94, 0.7)',
+                    'rgba(34, 197, 94, 0.7)'
+                ],
+                borderColor: [
+                    'rgba(59, 130, 246, 1)',
+                    'rgba(139, 92, 246, 1)',
+                    'rgba(244, 63, 94, 1)',
+                    'rgba(34, 197, 94, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                },
+                title: {
+                    display: true,
+                    text: '达拉然种族构成比例'
+                }
+            }
+        }
+    });
+
+    // 权力关系图表
+    const powerCtx = document.getElementById('powerChart').getContext('2d');
+    new Chart(powerCtx, {
+        type: 'radar',
+        data: {
+            labels: ['政治权力', '军事力量', '魔法掌控', '经济影响力', '外交地位', '文化影响力'],
+            datasets: [
+                {
+                    label: '肯瑞托六人议会',
+                    data: [95, 75, 98, 80, 85, 90],
+                    backgroundColor: 'rgba(139, 92, 246, 0.2)',
+                    borderColor: 'rgba(139, 92, 246, 1)',
+                    pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
+                },
+                {
+                    label: '银色盟约',
+                    data: [40, 65, 55, 30, 50, 45],
+                    backgroundColor: 'rgba(244, 63, 94, 0.2)',
+                    borderColor: 'rgba(244, 63, 94, 1)',
+                    pointBackgroundColor: 'rgba(244, 63, 94, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(244, 63, 94, 1)'
+                },
+                {
+                    label: '夺日者',
+                    data: [35, 60, 60, 35, 45, 40],
+                    backgroundColor: 'rgba(34, 197, 94, 0.2)',
+                    borderColor: 'rgba(34, 197, 94, 1)',
+                    pointBackgroundColor: 'rgba(34, 197, 94, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(34, 197, 94, 1)'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    angleLines: {
+                        display: true
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+</script>
+</html>
